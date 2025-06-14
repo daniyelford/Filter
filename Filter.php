@@ -162,9 +162,9 @@ class Filter{
                 if(!empty($this->filters_options[$filter_number]['flags'][$option_filter_number]))
                     return filter_var($x,$this->filters_options[$filter_number]['filter'],$this->filters_options[$filter_number]['flags'][$option_filter_number]);
                 else
-                    return this->handler($x,$filter_number);
+                    return $this->handler($x,$filter_number);
             else
-                return this->handler($x,$filter_number);
+                return $this->handler($x,$filter_number);
         else
             return false;
     }
@@ -181,7 +181,7 @@ class Filter{
                 }
                 return filter_var($x,$this->filters_options[$filter_number]['filter'],['options'=>$arr]);
             }else{
-                return this->handler($x,$filter_number);
+                return $this->handler($x,$filter_number);
             }
         else
             return false;
